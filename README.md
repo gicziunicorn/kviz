@@ -9,7 +9,14 @@
 <br>
 
 ## A projektről:
+
 > **A célunk egy játékos IQ teszt weboldal, amivel a felhasználók a tudásukat és logikai készségüket próbára teszik.**
+
+- #### Ötletek:
+   - időzítő
+   - kérdés beküldés
+   - admin oldal
+   - navbar
 
 <br>
 

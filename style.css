@@ -1,36 +1,83 @@
 * {
-  cursor: url('https://cdn.cursors-4u.net/css-previews/animated-blue-pencil-ef95ca17-css.webp') 0 0, auto !important;
+  /*cursor: url('https://cdn.cursors-4u.net/css-previews/animated-blue-pencil-ef95ca17-css.webp') 0 0, auto !important;*/
 }
 body {
-  background-color: black;
   margin: 0;
-  cursor: none;
-  cursor: url("kurzor/Miku_Cursor_1.cur"), auto;
-}
-h1 {
-  text-align: center;
-  font-weight: bold;
-  text-decoration: underline solid black;
-  font-size: 42px;
-  background-color: #00000055;
-  padding: 20px;
-}
-h1 a {
-  color: black;
-}
-main {
-  display: flex;
-  flex-direction: column;
-  margin-top: 0px;
-  height: 100vh;
-  gap: 40px;
-  background-color: black;
-}
-.container {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
 }
+main {
+  width: 80vw;
+  height: 65vh;
+  background-color: #12c4e4;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  border: solid, black, 3px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 6px 6px 0px 0px black;
+  max-width: 1500px;
+}
+
+h1 {
+  font-size: clamp(38px, 5vw, 48px);
+  & a {
+    color: transparent;
+    text-decoration: none;
+      background: linear-gradient(60deg, black 70%, #707070 80%, black 90%);
+      background-clip: text;
+      background-position: 60% 0%;
+      background-size: 300% 100%;
+      animation-name: glow;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      animation-timing-function: cubic-bezier(0,.6,0,1);
+      animation-delay: 2s;
+  }
+}
+@keyframes glow {
+  from {background-position-x:0%;}
+  to {background-position-x: 200%;}
+}
+
+@media screen and (width < 530px) {
+  h1 a {
+    display: block;
+  }
+}
+
+#start{
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 15px;
+  width: 160px;
+  height: 70px;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  line-height: 70px;
+  user-select: none;
+  transition: .4s;
+  padding: 0px;
+  box-sizing: content-box;
+  cursor: pointer;
+}
+#start:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 0px 16px 14px #ffffff7a;
+}
+
+#kviz{
+  display: none;
+}
+
 .kerdes {
   background-color: white;
   width: 90vw;
@@ -45,58 +92,35 @@ main {
   background-color: white;
   border: solid, black, 2px;
   border-radius: 10px;
-  width: 25vw;
-  height: 12vh;
+  width: 100%;
+  padding: 30px 0;
   text-align: center;
-  transition: 0.1s linear;
-  &:hover {
-    width: calc(25vw + 35px);
-    height: calc(12vh + 35px);
-    & p {
-      font-size: 28px;
-    }
-  }
+  transition: .2s linear;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  user-select: none;
+  &:hover {
+    box-shadow: 0px 0px 4px 2px white;
+    background-color: #ededed;
+  }
 }
-.valasz p {
-  transition: 0.1s linear;
-}
-.valaszok {
+#valaszok {
   display: grid;
   align-items: center;
   justify-items: center;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 100vw;
+  width: 100%;
   height: calc(29vh + 45px);
-  gap: 30px;
+  gap: 50px;
   padding: 0 40px;
   box-sizing: border-box;
 }
-
 @media screen and (max-width: 1200px) {
   .valaszok {
     grid-template-columns: 1fr;
   }
-  .valasz {
-    width: 70vw;
-    &:hover {
-      width: 70vw;
-      height: 12vh;
-    }
-  }
-}
-#kurzor {
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 999;
-}
-body:hover #kurzor {
-  opacity: 1;
 }

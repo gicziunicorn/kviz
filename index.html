@@ -1,11 +1,10 @@
 <html lang="hu-HU">
-
 <head>
     <meta charset="UTF-8">
     <base href="index.html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlphaCode IQ teszt</title>
-    <link rel="stylesheet" href="kezdolap.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="background.css">
     <link rel="shortcut icon" href="kepek/pfp.png" type="image/x-icon">
     <meta name="description" content="Vicces kvíz és IQ teszt az AlphaCode-tól">
@@ -19,18 +18,29 @@
     <meta name="robots" content="index, follow">
     <script src="main.js"></script>
 </head>
-
 <body>
     <div class="bg"></div>
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
 
-    <div class="kartya">
-        <h1><a href="https://github.com/gicziunicorn/kviz/tree/main" target="_blank">AlphaCode</a> IQ teszt</h1>
-        <button id="start">Kezdés!</button>
-        <!--<a id="start" href="kviz.html" role="link">Kezdés!</a>-->
-    </div>
+    <section id="kezdolap">
+        <main class="kartya">
+            <h1><a href="https://github.com/gicziunicorn/kviz/tree/main" target="_blank">AlphaCode</a> IQ teszt</h1>
+            <button id="start">Kezdés!</button>
+            <!--<a id="start" href="kviz.html" role="link">Kezdés!</a>-->
+        </main>
+    </section>
+    <section id="kviz" style="display:none;">
+        <main>
+            <h1><a href="https://github.com/gicziunicorn/kviz/tree/main" target="_blank">AlphaCode</a> IQ teszt</h1>
+            <h2 id="kerdes"></h2>
 
+            <div id="valaszok">
+                <div class="valasz" role="button"></div>
+                <div class="valasz" role="button"></div>
+                <div class="valasz" role="button"></div>
+            </div>
+        </main>
+    </section>
 </body>
-
 </html>

@@ -1,19 +1,17 @@
 <?php
 require_once "connection.php";
 
-if (!isset($conn)) {
-    echo "Failed to connect to the database :(";
-    exit;
-}
+$table = "kerdesek";
 
-$cmd = $conn->prepare("SELECT * FROM {$table};");
-$cmd->execute();
-$result = $cmd->get_result();
+$result = $conn->query("SELECT * FROM kerdesek");
 $data = [];
-if($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
+if($result->rowCount() > 0) {
+    while ($row = $result->fetch(\PDO::FETCH_ASSOC)) {
         $data[] = $row;
     }
+} else {
+    echo "No data!";
+    exit;
 }
 
 echo nl2br(json_encode($data, JSON_UNESCAPED_UNICODE));
