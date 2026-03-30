@@ -7,6 +7,9 @@ body {
   justify-content: center;
   align-items: center;
   background-color: black;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
 }
 main {
   width: 80vw;
@@ -140,4 +143,18 @@ span {
   color: transparent;
   background: linear-gradient(65deg, red, orange, yellow, green, blue, purple);
   background-clip: text;
+}
+
+
+
+select {
+  width: 280px;
+  font-size: 18px;
+  border-radius: 8px;
+  padding: 6px;
+}
+
+label {
+  font-size: 18px;
+  font-family: sans-serif;
 }

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="hu-HU">
 <head>
     <meta charset="UTF-8">
@@ -18,6 +19,7 @@
     <meta name="robots" content="index, follow">
     <script src="main.js"></script>
 </head>
+
 <body>
     <div class="bg"></div>
     <div class="bg bg2"></div>
@@ -26,11 +28,13 @@
     <section id="kezdolap" style="display: block;">
         <main>
             <h1><a href="https://github.com/gicziunicorn/kviz/tree/main" target="_blank">AlphaCode</a> IQ teszt</h1>
-            <select id="hossz">
-                <option value="10">10 kérdés (gyors)</option>
-                <option value="20">20 kérdés (közepes)</option>
-                <option value="0">MAXIMUM!!! (az összes kérdés)</option>
-            </select>
+            <label for="hossz">A teszt hossza:
+                <select id="hossz">
+                    <option value="10">10 kérdés (gyors)</option>
+                    <option value="20">20 kérdés (közepes)</option>
+                    <option value="0">MAXIMUM!!! (az összes kérdés)</option>
+                </select>
+            </label>
             <button id="start">Kezdés!</button>
         </main>
     </section>
