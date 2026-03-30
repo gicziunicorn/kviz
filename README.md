@@ -21,8 +21,6 @@
 <br>
 
 ### A weboldal használata:
-
-  - # #TODO#:
    - A weboldal megnyitása után egy kezdőlap látható.
    - Ebben a menüben a "Kezdés" gombbal lehet kezdeni a kvízt.
    - A kvíz tetszőleges számú kérdésből állhat, a "Kezdés" gomb nyomása után kiválasztott beállítás alapján.
