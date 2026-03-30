@@ -23,23 +23,35 @@
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
 
-    <section id="kezdolap">
-        <main class="kartya">
+    <section id="kezdolap" style="display: block;">
+        <main>
             <h1><a href="https://github.com/gicziunicorn/kviz/tree/main" target="_blank">AlphaCode</a> IQ teszt</h1>
+            <select id="hossz">
+                <option value="10">10 kérdés (gyors)</option>
+                <option value="20">20 kérdés (közepes)</option>
+                <option value="0">MAXIMUM!!! (az összes kérdés)</option>
+            </select>
             <button id="start">Kezdés!</button>
-            <!--<a id="start" href="kviz.html" role="link">Kezdés!</a>-->
         </main>
     </section>
+
     <section id="kviz" style="display:none;">
         <main>
             <h1><a href="https://github.com/gicziunicorn/kviz/tree/main" target="_blank">AlphaCode</a> IQ teszt</h1>
             <h2 id="kerdes"></h2>
-
+            
             <div id="valaszok">
                 <div class="valasz" role="button"></div>
                 <div class="valasz" role="button"></div>
                 <div class="valasz" role="button"></div>
             </div>
+        </main>
+    </section>
+
+    <section id="eredmeny" style="display: none;">
+        <main>
+            <h1><a href="https://github.com/gicziunicorn/kviz/tree/main" target="_blank">AlphaCode</a> IQ teszt <span>Eredmény</span></h1>
+            <p id="pont">0000</p>
         </main>
     </section>
 </body>
