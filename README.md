@@ -25,7 +25,7 @@
   - # #TODO#:
    - A weboldal megnyitása után egy kezdőlap látható.
    - Ebben a menüben a "Kezdés" gombbal lehet kezdeni a kvízt.
-   - A kvíz 16 kérdésből áll.
+   - A kvíz tetszőleges számú kérdésből állhat, a "Kezdés" gomb nyomása után kiválasztott beállítás alapján.
    - Minden kérdéshez három darab válasz elárhető, ezekből mindig csak egy helyes.
 
 <br>
