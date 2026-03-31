@@ -17,7 +17,7 @@
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/230545579">
     <meta property="og:url" content="https://github.com/gicziunicorn/kviz">
     <meta name="robots" content="index">
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -25,10 +25,10 @@
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
 
-    <section id="kezdolap" style="display: block;">
+    <section id="kezdolap">
         <main>
-            <h1><a href="https://github.com/gicziunicorn/kviz/tree/main" target="_blank">AlphaCode</a> IQ teszt</h1>
-            <label for="hossz">A teszt hossza:
+            <h1><a href="https://github.com/gicziunicorn/kviz/tree/main" target="_blank" tabindex="-1">AlphaCode</a> IQ teszt</h1>
+            <label for="hossz">
                 <select id="hossz">
                     <option value="10">10 kérdés (gyors)</option>
                     <option value="20">20 kérdés (közepes)</option>
@@ -39,23 +39,23 @@
         </main>
     </section>
 
-    <section id="kviz" style="display:none;">
+    <section id="kviz" class="hidden">
         <main>
-            <h1><a href="https://github.com/gicziunicorn/kviz/tree/main" target="_blank">AlphaCode</a> IQ teszt</h1>
-            <h2 id="kerdes"></h2>
+            <h1><a href="https://github.com/gicziunicorn/kviz/tree/main" target="_blank" tabindex="-1">AlphaCode</a> IQ teszt</h1>
+            <h2 id="kerdes" aria-live="polite" tabindex="-1">Kérdés betöltése...</h2>
 
             <div id="valaszok">
-                <div class="valasz" role="button"></div>
-                <div class="valasz" role="button"></div>
-                <div class="valasz" role="button"></div>
+                <button class="valasz" role="button">1. válasz</button>
+                <button class="valasz" role="button">2. válasz</button>
+                <button class="valasz" role="button">3. válasz</button>
             </div>
         </main>
     </section>
 
-    <section id="eredmeny" style="display: none;">
+    <section id="eredmeny" class="hidden">
         <main>
-            <h1><a href="https://github.com/gicziunicorn/kviz/tree/main" target="_blank">AlphaCode</a> IQ teszt <span>Eredmény</span></h1>
-            <p id="pont">0000</p>
+            <h1><a href="https://github.com/gicziunicorn/kviz/tree/main" target="_blank" tabindex="-1">AlphaCode</a> IQ teszt <span>Eredmény</span></h1>
+            <p id="pont" aria-label="pontszám" aria-live="polite" tabindex=""></p>
         </main>
     </section>
 </body>

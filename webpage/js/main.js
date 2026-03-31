@@ -20,8 +20,8 @@ else {
     hossz = select;
 }
 
-document.getElementById("kezdolap").style.display = "none";
-document.getElementById("kviz").style.display = "block";
+document.getElementById("kezdolap").classList.toggle("hidden");
+document.getElementById("kviz").classList.toggle("hidden");
 
 var pontszam = 0;
 var already = [];
@@ -32,9 +32,9 @@ kerdes(data, already, pontszam, hossz);
 
 function kerdes(data, already, pontszam, hossz) {
     if (already.length == hossz) {
-        document.getElementById("kviz").style.display = "none";
-        document.getElementById("eredmeny").style.display = "block";
-        document.getElementById("pont").textContent = `Az ön pontszáma: ${pontszam}/${hossz}`;
+        document.getElementById("kviz").classList.toggle("hidden");
+        document.getElementById("eredmeny").classList.toggle("hidden");
+        document.getElementById("pont").textContent = `A pontszámod: ${pontszam}/${hossz}`;
         return;
     }
 
@@ -63,6 +63,8 @@ function kerdes(data, already, pontszam, hossz) {
         listeners.push(fun);
         v.addEventListener("click",  fun);
     }
+
+    kerdes.focus();
 }
 
 
