@@ -30,7 +30,7 @@ USE kviz;
 -- Tábla szerkezet ehhez a táblához `kerdesek`
 --
 
-CREATE TABLE `kerdesek` (
+CREATE TABLE IF NOT EXISTS `kerdesek` (
   `id` int(11) NOT NULL,
   `kerdes` varchar(300) NOT NULL,
   `valasz1` varchar(200) NOT NULL,

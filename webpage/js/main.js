@@ -1,44 +1,36 @@
-var query;
-var pontszam = 0;
-var listeners = [];
-var already = [];
-var hossz = 0;
-
-fetch("main.php")
-.then( res => res.text() )
-.then( txt => { query = txt; })
-
-function main() {
-// main function
+async function main() {  // main function
+// fetch the data from the php file
+const text = await fetch("php/main.php").then(res => res.text());
 // check for errors in the php
+var data;
 try {
-    var data;
-    data = JSON.parse(query);
+    data = JSON.parse(text);
 } catch (e) {
     window.alert("Hiba történt! Kérlek fordulj a fejlesztőkhöz, vagy nézd meg a konzolt részletesebb leírásért.");
-    console.warn(`The following text was returned from the php code:\n${query}`);
+    console.warn(`The following text was returned from the php code:\n${text}`);
     throw new Error("Didn't get a json from the php code. Check if the database is reachable and the php code can connect to it (if there was an error returned from the php code, you can see it above this error as a warning). If you want to retry, please refresh the page.");
 }
 
-const alma = document.getElementById("hossz").value;
-if (alma==0) {
+var hossz = 0;
+const select = document.getElementById("hossz").value;
+if (select==0) {
     hossz = data.length;
 }
 else {
-    hossz = alma;
+    hossz = select;
 }
 
-
-// go if there wasn't any error
 document.getElementById("kezdolap").style.display = "none";
 document.getElementById("kviz").style.display = "block";
 
-kerdes(data);
+var pontszam = 0;
+var already = [];
+kerdes(data, already, pontszam, hossz);
 
 } // end of main
 
 
-function kerdes(data) {
+function kerdes(data, already, pontszam, hossz) {
     if (already.length == hossz) {
         document.getElementById("kviz").style.display = "none";
         document.getElementById("eredmeny").style.display = "block";
@@ -63,32 +55,33 @@ function kerdes(data) {
         valaszok[idx-1].id = i+1;
     }
     const valaszelemek = document.getElementsByClassName("valasz");
-    
+
+    var listeners = [];
     for (let i=0; i<valaszelemek.length; i++) {
         const v = valaszelemek[i];
-        const fun = kovi.bind(this, data, v.id, rand);
-        v.addEventListener("click",  fun);
+        const fun = kovi.bind(this, data, v.id, rand, listeners, already, pontszam, hossz);
         listeners.push(fun);
+        v.addEventListener("click",  fun);
     }
 }
 
 
-function kovi(data, i, rand) {
+function kovi(data, i, rand, listeners, already, pontszam, hossz) {
     const helyes = data[rand]["helyes"];
-    
+
     const valaszelemek = document.getElementsByClassName("valasz");
-        
+
     for (let n=0; n<valaszelemek.length; n++) {
         const v = valaszelemek[n];
         v.removeEventListener("click", listeners[n]);
     }
     listeners = [];
-    
+
     if (i==helyes) {
         pontszam++;
-        kerdes(data);
+        kerdes(data, already, pontszam, hossz);
     } else {
-        kerdes(data);
+        kerdes(data, already, pontszam, hossz);
     }
 }
 
@@ -101,7 +94,6 @@ window.onload = function init(){
             main();
         } catch (error) {
             console.error(error);
-            
         }
     });
 }
