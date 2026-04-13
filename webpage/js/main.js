@@ -35,6 +35,30 @@ function kerdes(data, already, pontszam, hossz) {
         document.getElementById("kviz").classList.toggle("hidden");
         document.getElementById("eredmeny").classList.toggle("hidden");
         document.getElementById("pont").textContent = `A pontszámod: ${pontszam}/${hossz}`;
+        var iqszint;
+        const szazalek = pontszam/hossz*100;
+        if (szazalek >= 90) {
+            iqszint = "111 (Géniusz szint)";
+        }
+        else if (szazalek >= 75) {
+            iqszint = "99 (pollákos tanár szint)";
+        }
+        else if (szazalek >= 60) {
+            iqszint = "75 (átlag pollákos szint)";
+        }
+        else if ( szazalek >= 45) {
+            iqszint = "50 (buta szint)";
+        }
+        else if ( szazalek >= 20) {
+            iqszint = "25 (youtube shorts szint)";
+        }
+        else if ( szazalek > 0) {
+            iqszint = "0 (feltaláló szint)";
+        }
+        else {
+            iqszint = "error (csillag patrik szint)";
+        }
+        document.getElementById("iqszint").textContent = iqszint;
         return;
     }
 
@@ -43,7 +67,9 @@ function kerdes(data, already, pontszam, hossz) {
         rand = genRandom(0, data.length);
     }
     already.push(rand);
-
+    
+    document.getElementById("szamolo").textContent = `${already.length}/${hossz}`;
+    
     const kerdes = document.getElementById("kerdes");
     kerdes.textContent=data[rand].kerdes;
     const valaszok = Array.from(document.getElementById("valaszok").children);
