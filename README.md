@@ -34,9 +34,10 @@
 
     - Bármely számítógép, ami egy modern webes böngésző futtatására képes elég. A weboldal nem tartalmaz hardverigényes kódot.
 
+
 - #### Szoftver követelmény:
 
-  - Modern webes böngésző, annak elfuttatására képes operációs rendszer
+  - Modern webes böngésző, annak elfuttatására képes operációs rendszer. Továbbá internet elérés szükséges.
 
 <br>
 
